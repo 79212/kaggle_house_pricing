@@ -4,7 +4,7 @@ from sklearn.preprocessing import OneHotEncoder
 from scipy import stats
 
 def apply_one_hot_encoding(df_fit, df_trans):
-    one_hot_encoder = OneHotEncoder()
+    one_hot_encoder = OneHotEncoder(handle_unknown='ignore')
 
     df_ohe_fit = df_fit.select_dtypes(include='object')
     one_hot_encoder.fit(df_ohe_fit)
